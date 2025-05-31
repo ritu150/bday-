@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffe6f0;
+      overflow-x: hidden;
+    }
+    .section {
+      min-height: 100vh;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+    .section.active {
+      display: flex;
+      opacity: 1;
+      z-index: 1;
+    }
+    h1, h2, p, blockquote {
+      color: #333;
+    }
+    .flashcard {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin: 1rem;
+      padding: 1.5rem;
+      max-width: 600px;
+    }
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: float 6s linear infinite;
+    }
+    .heart::before, .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+    .download-section {
+      padding-top: 2rem;
+    }
+    .next-btn {
+      margin-top: 2rem;
+      padding: 10px 25px;
+      background: #ff66a3;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .next-btn:hover {
+      background-color: #e65590;
+    }
+    .pdf-link {
+      color: #d6006e;
+      font-weight: bold;
+      text-decoration: underline;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating Hearts -->
+  <script>
+    for (let i = 0; i < 20; i++) {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = `${Math.random() * 100}vw`;
+      heart.style.top = `${Math.random() * 100}vh`;
+      heart.style.animationDuration = `${Math.random() * 4 + 2}s`;
+      document.body.appendChild(heart);
+    }
+  </script>
+
+  <!-- Page 1 -->
+  <div class="section active" id="page1">
+    <h1>🎉 Happy Birthday to My kuchupuchuuu! 🎂</h1>
+    <p>Today is all about you—the most amazing person who brings light, laughter, and love into the lives of everyone around them.</p>
+    <p>On your special day, I want to say thank you for being the kind of friend who listens without judgment, supports without conditions, and loves with a heart so pure. You're not just a friend, you're family by choice.</p>
+    <p><strong>✨ My heartfelt wishes and blessings for you:</strong></p>
+    <ul style="text-align:left; max-width:600px;">
+      <li>May this year bring you endless joy and peace.</li>
+      <li>May your heart always be full of love and courage.</li>
+      <li>May your dreams take flight and lead you to incredible places.</li>
+      <li>May you find success in all you do, and never forget how capable and strong you are.</li>
+      <li>And above all, may life always be kind to you—just like you are to others.</li>
+    </ul>
+    <p>You deserve nothing but the best in everything life has to offer. So keep shining, keep believing, and keep being the amazing soul you are.</p>
+    <p>Here’s to more beautiful memories, laughter-filled moments, and unbreakable bonds ahead. Happy Birthday once again! 🥳 Sending you all my love, blessings, and the tightest virtual hug! 🤗❤️</p>
+    <button class="next-btn" onclick="nextPage(1)">Next</button>
+  </div>
+
+  <!-- Page 2 -->
+  <div class="section" id="page2">
+    <h2>Thank You For...</h2>
+    <div class="flashcard">Always being there when I needed someone the most.</div>
+    <div class="flashcard">Listening to all my rants without ever complaining.</div>
+    <div class="flashcard">Making me smile even on the toughest days.</div>
+    <div class="flashcard">Understanding me like no one else ever could.</div>
+    <div class="flashcard">Being my safe space in a world full of chaos.</div>
+    <div class="flashcard">Never giving up on our friendship, no matter what.</div>
+    <div class="flashcard">Loving me selflessly, without expectations.</div>
+    <button class="next-btn" onclick="nextPage(2)">Next</button>
+  </div>
+
+  <!-- Page 3 -->
+  <div class="section" id="page3">
+    <h2>Lyrics That Speak My Heart 🎶</h2>
+    <p>Each and every love song reminds me of you.</p>
+    <p><a href="https://open.spotify.com/playlist/1IumsZzMCuyuGcQUl8XJ7e?si=GiMYOqA9QR6uH1X7SCTs5g" target="_blank" rel="noopener noreferrer">Tap here to open my special playlist</a></p>
+    <button class="next-btn" onclick="nextPage(3)">Next</button>
+  </div>
+
+  <!-- Page 4 -->
+  <div class="section" id="page4">
+    <h2>🎉 Happy Birthday to My Dearest Friend! 🎂</h2>
+    <p>On this special day, I want to remind you how much you mean to me. Your presence in my life is a blessing, and I cherish every moment we've shared.</p>
+    <blockquote>"Tu jahaan main wahaan<br>Saah ruk jaawe, ya jag mukk jaawe<br>Tenu sang rakhna..."</blockquote>
+    <p>No matter where life takes us, I wish to keep you close.</p>
+    <blockquote>"Baddalaan pichhe sooraj luk jaave<br>Tenu sang rakhna..."</blockquote>
+    <p>Even if the sun hides behind the clouds, I want you by my side.</p>
+    <blockquote>"Dariya de agge, main deewar ban jaawan<br>Tenu sang rakhna..."</blockquote>
+    <p>I promise to stand as a wall before any storm that comes your way.</p>
+    <p>May this birthday bring you immense joy, love, and all the success you deserve. Happy Birthday, my forever friend! 🥳❤️</p>
+
+    <div class="download-section">
+      <h3>🎁 Your Special Gifts</h3>
+      <p>👉 <a href="https://drive.google.com/file/d/1tq-vIRvTwW-PWOc8HV2reLdOu-D9qJWr/view?usp=drivesdk" class="pdf-link" target="_blank">101 Reasons Why You're the Best Best Friend 💖</a></p>
+      <p>👉 <a href="https://drive.google.com/file/d/1tvHgKggzYUIPflAx6qeAjnWyr8rVSsAi/view?usp=drivesdk" class="pdf-link" target="_blank">Gift 1 🎁</a></p>
+      <p>👉 <a href="https://drive.google.com/file/d/1tuze-Q0ucrUEWgCWqt6tJQXszuTRzjua/view?usp=drivesdk" class="pdf-link" target="_blank">Gift 2 🎉</a></p>
+    </div>
+  </div>
+
+  <script>
+    function nextPage(currentPage) {
+      const current = document.getElementById(`page${currentPage}`);
+      const next = document.getElementById(`page${currentPage + 1}`);
+      if (next) {
+        current.classList.remove('active');
+        setTimeout(() => {
+          current.style.display = 'none';
+          next.style.display = 'flex';
+          requestAnimationFrame(() => next.classList.add('active'));
+        }, 1000);
+      }
+    }
+  </script>
+</body>
+</html>
